@@ -8,6 +8,7 @@ from sklearn.model_selection import RepeatedStratifiedKFold
 
 from sklearn.model_selection import ShuffleSplit, cross_val_score, train_test_split, StratifiedKFold, learning_curve
 
+# code based off of https://scikit-learn.org/stable/auto_examples/model_selection/plot_learning_curve.html
 def plot_learning_curve(model, X, y, cv=5, title='Learning Curve'):
     sizes, training_scores, testing_scores = learning_curve(model, X, y, cv=5, train_sizes=np.linspace(0.1, 1.0, 10))
 

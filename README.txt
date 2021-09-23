@@ -11,7 +11,7 @@ in your conda environment.
 
 Step-by-step:
 
-1. Clone this repository and then cd into the directory
+1. Clone this repository[https://github.com/eugeneoh/CS7641-Assignment-1.git] and then cd into the directory
 2. conda create -n cs7641
 3. conda activate cs7641
 4. conda install -c conda-forge tensorflow

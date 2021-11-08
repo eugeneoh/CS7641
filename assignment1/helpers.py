@@ -1,3 +1,4 @@
+
 import pandas as pd
 
 # This function copied from https://github.com/wesley-smith/CS7641-assignment-1/blob/master/helpers.py
@@ -23,3 +24,16 @@ def scikit_cv_result_to_df(cv_res, drop_splits=True):
 
 def get_useful_cv_columns():
     return ['mean_fit_time', 'mean_score_time', 'mean_test_score', 'mean_train_score']
+
+def center(X):
+    X = np.array(X)
+    mean = X.mean(axis=1, keepdims=True)
+    return X - mean
+
+def whiten(X):
+    cov = np.cov(X)
+    d, E = np.linalg.eigh(cov)
+    D = np.diag(d)
+    D_inv = np.sqrt(np.linalg.inv(D))
+    X_whiten = np.dot(E, np.dot(D_inv, np.dot(E.T, X)))
+    return X_whiten
